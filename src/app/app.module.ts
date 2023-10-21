@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { Axios } from 'axios';
 @NgModule({
   declarations: [
     AppComponent,
