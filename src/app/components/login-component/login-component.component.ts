@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgToastService } from 'ng-angular-popup';
 import User from 'src/app/model/user/User';
 import { LoginServiceService } from 'src/app/services/login/login-service.service';
 
@@ -12,7 +13,7 @@ export class LoginComponentComponent {
   public email:string = '';
   public password:string = '';
 
-  constructor(private loginService:LoginServiceService){
+  constructor(private loginService:LoginServiceService,private toast:NgToastService){
 
   }
 
@@ -24,8 +25,7 @@ export class LoginComponentComponent {
       //roe para a pagina de apostas protegida
     })
     .catch((error) => {
-      console.log(error);
-      //fazer um dialog de erro no canto superior direito
+      this.toast.error({detail:"ERRO",summary:'Falha ao executar login',sticky:false, position:'topRight'});
     });
    }
 }

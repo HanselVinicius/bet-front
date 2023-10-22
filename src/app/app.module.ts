@@ -11,11 +11,14 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { Axios } from 'axios';
+import { BetsComponent } from './components/bets/bets.component';
+import { NgToastModule } from 'ng-angular-popup';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponentComponent,
+    BetsComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { Axios } from 'axios';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
