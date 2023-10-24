@@ -9,7 +9,7 @@ import { LoginServiceService } from 'src/app/services/login/login-service.servic
   styleUrls: ['./login-component.component.css']
 })
 export class LoginComponentComponent {
-  
+
   public email:string = '';
   public password:string = '';
 
@@ -21,8 +21,8 @@ export class LoginComponentComponent {
     this.loginService.login(this.email, this.password)
     .then((response) => {
       let user = User.fromJson(response);
-      console.log(user);
-      //roe para a pagina de apostas protegida
+      localStorage.setItem("USER",JSON.stringify(user));
+      //vai para a pagina de apostas protegida
     })
     .catch((error) => {
       this.toast.error({detail:"ERRO",summary:'Falha ao executar login',sticky:false, position:'topRight'});

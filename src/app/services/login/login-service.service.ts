@@ -16,4 +16,13 @@ export class LoginServiceService {
     return this.axios.getClient().post('/v1/auth/login',new LoginDto(user,password))
   }
 
+
+  public isLogged():boolean{
+    if(localStorage.getItem("USER")){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 }

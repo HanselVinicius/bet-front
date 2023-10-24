@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { BetsComponent } from './components/bets/bets.component';
+import { authenticationGuard } from './guards/AuthGuard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   },
   {
     path:"bets",
+    canActivate:[authenticationGuard],
     component:BetsComponent
   }
 ];
