@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path:"bets",
-    canActivate:[authenticationGuard],
+    canActivate:[authenticationGuard()],
     component:BetsComponent
   }
 ];

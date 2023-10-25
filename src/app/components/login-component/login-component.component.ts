@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import User from 'src/app/model/user/User';
 import { LoginServiceService } from 'src/app/services/login/login-service.service';
@@ -13,7 +14,7 @@ export class LoginComponentComponent {
   public email:string = '';
   public password:string = '';
 
-  constructor(private loginService:LoginServiceService,private toast:NgToastService){
+  constructor(private loginService:LoginServiceService,private toast:NgToastService,private router:Router){
 
   }
 
@@ -22,7 +23,8 @@ export class LoginComponentComponent {
     .then((response) => {
       let user = User.fromJson(response);
       localStorage.setItem("USER",JSON.stringify(user));
-      //vai para a pagina de apostas protegida
+      this.toast.success({detail:"OK",summary:'Login efetuado com sucesso',sticky:false, position:'topRight'});
+      this.router.navigate(['/bets']);
     })
     .catch((error) => {
       this.toast.error({detail:"ERRO",summary:'Falha ao executar login',sticky:false, position:'topRight'});
