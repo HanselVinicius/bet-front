@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { BetsComponent } from './components/bets/bets.component';
 import { authenticationGuard } from './guards/AuthGuard';
+import { ForbiddenComponent } from './components/error/forbidden/forbidden.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     path:"bets",
     canActivate:[authenticationGuard()],
     component:BetsComponent
+  },
+  {
+    path:"forbidden",
+    component:ForbiddenComponent
   }
 ];
 

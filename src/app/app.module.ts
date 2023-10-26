@@ -10,15 +10,17 @@ import {MatCardModule} from '@angular/material/card';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { Axios } from 'axios';
 import { BetsComponent } from './components/bets/bets.component';
 import { NgToastModule } from 'ng-angular-popup';
+import { ForbiddenComponent } from './components/error/forbidden/forbidden.component';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponentComponent,
     BetsComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { NgToastModule } from 'ng-angular-popup';
     MatFormFieldModule,
     NgToastModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

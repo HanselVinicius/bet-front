@@ -22,7 +22,7 @@ export class LoginComponentComponent {
     this.loginService.login(this.email, this.password)
     .then((response) => {
       let user = User.fromJson(response);
-      localStorage.setItem("USER",JSON.stringify(user));
+      this.loginService.setLogged(user);
       this.toast.success({detail:"OK",summary:'Login efetuado com sucesso',sticky:false, position:'topRight'});
       this.router.navigate(['/bets']);
     })
