@@ -14,6 +14,7 @@ import { BetsComponent } from './components/bets/bets.component';
 import { NgToastModule } from 'ng-angular-popup';
 import { ForbiddenComponent } from './components/error/forbidden/forbidden.component';
 import { CookieService } from 'ngx-cookie-service';
+import { AnimalCardComponent } from './components/bets/animal-card/animal-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponentComponent,
     BetsComponent,
     ForbiddenComponent,
+    AnimalCardComponent,
   ],
   imports: [
     BrowserModule,
