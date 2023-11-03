@@ -20,7 +20,12 @@ export class ApiClient{
         });
     }
 
-    public  getClient(){
+    public getClient(){
+        return this.axiosClient;
+    }
+
+    public getClienWithAuth(token:string){
+        this.axiosClient.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         return this.axiosClient;
     }
     

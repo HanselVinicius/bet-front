@@ -10,23 +10,19 @@ import { AnimalService } from 'src/app/services/animal/animal.service';
 })
 export class BetsComponent implements OnInit {
 
-constructor(private animalService: AnimalService,private cookieService:CookieService) { }
-
+  constructor(private animalService: AnimalService,private cookieService:CookieService) { }
+  public currentPage:number = 0;
+  public pageSize:number = 20;
+  public animalList:Set<Animal> = new Set<Animal>();
 
   ngOnInit(): void {
-    this.populeList();
+    this.populeList(this.currentPage,this.pageSize);
   }
 
-  // mock data remove when make the service 
-  public animalList:Animal[] = [
-   
-  ]
-
-  private populeList() {
-    this.animalService.getAnimals(JSON.parse(this.cookieService.get("USER")).token).then((response)=>{
-      for(let animal of response.data.content){
-        this.animalList.push(animal);
-      }
+  public populeList(page: number,pageSize:number) {
+    this.animalService.getAnimals(JSON.parse(this.cookieService.get("USER")).token,page,pageSize).then((response)=>{
+      this.animalList = response.data.content;
+      
     })
   }
 }
