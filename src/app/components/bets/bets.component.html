@@ -8,8 +8,9 @@
 
 
   <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2">
-    <button class="mr-2" (click)="populeList(currentPage - 1, pageSize)" [disabled]="currentPage === 1">Anterior</button>
-    <button (click)="populeList(currentPage + 1, pageSize)">Próximo</button>
+    <ng-container *ngFor="let num of totalPages" >
+      <button (click)="populeList(currentPage + num, pageSize)">{{num}}</button>
+    </ng-container>
   </div>
   
   

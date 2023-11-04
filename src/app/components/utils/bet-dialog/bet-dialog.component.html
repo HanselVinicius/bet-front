@@ -1,0 +1,10 @@
+<div class="bg-white text-black">
+<h1 mat-dialog-title class="text-black">Apostar</h1>
+<div mat-dialog-content class="text-black">
+    Deseja Apostar Neste Animal?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close class="text-black" (click)="onConfirm(false)" >Não</button>
+  <button mat-button mat-dialog-close cdkFocusInitial class="text-black" (click)="onConfirm(true)">Sim</button>
+</div>
+</div>

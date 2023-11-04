@@ -6,6 +6,6 @@
         <p>Ultimo dia Sorteado: {{ animal.lastDayDrawed | date:'dd/MM/yyyy' }}</p>
     </mat-card-content>
     <mat-card-actions class="flex justify-center">
-        <button mat-button >APOSTAR</button>
+        <button mat-button (click)="openBetDialog()" >APOSTAR</button>
     </mat-card-actions>
   </mat-card>

@@ -15,6 +15,9 @@ import { NgToastModule } from 'ng-angular-popup';
 import { ForbiddenComponent } from './components/error/forbidden/forbidden.component';
 import { CookieService } from 'ngx-cookie-service';
 import { AnimalCardComponent } from './components/bets/animal-card/animal-card.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BetDialogComponent } from './components/utils/bet-dialog/bet-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,9 @@ import { AnimalCardComponent } from './components/bets/animal-card/animal-card.c
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    NgToastModule
+    NgToastModule,
+    MatDialogModule,
+    BetDialogComponent,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

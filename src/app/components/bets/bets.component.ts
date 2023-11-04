@@ -14,7 +14,7 @@ export class BetsComponent implements OnInit {
   public currentPage:number = 0;
   public pageSize:number = 20;
   public animalList:Set<Animal> = new Set<Animal>();
-
+  public totalPages:any;
   ngOnInit(): void {
     this.populeList(this.currentPage,this.pageSize);
   }
@@ -22,7 +22,7 @@ export class BetsComponent implements OnInit {
   public populeList(page: number,pageSize:number) {
     this.animalService.getAnimals(JSON.parse(this.cookieService.get("USER")).token,page,pageSize).then((response)=>{
       this.animalList = response.data.content;
-      
+      this.totalPages = Array(response.data.totalPages).fill(0).map((x,i)=>i);
     })
   }
 }
