@@ -10,7 +10,7 @@ import { AnimalService } from 'src/app/services/animal/animal.service';
 })
 export class BetsComponent implements OnInit {
 
-  constructor(private animalService: AnimalService,private cookieService:CookieService) { }
+  constructor(private animalService: AnimalService) { }
   public currentPage:number = 0;
   public pageSize:number = 20;
   public animalList:Set<Animal> = new Set<Animal>();
@@ -20,7 +20,7 @@ export class BetsComponent implements OnInit {
   }
 
   public populeList(page: number,pageSize:number) {
-    this.animalService.getAnimals(JSON.parse(this.cookieService.get("USER")).token,page,pageSize).then((response)=>{
+    this.animalService.getAnimals(page,pageSize).then((response)=>{
       this.animalList = response.data.content;
       this.totalPages = Array(response.data.totalPages).fill(0).map((x,i)=>i);
     })
