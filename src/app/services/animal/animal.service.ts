@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { ApiClient } from 'src/app/infra/ApiClient';
+import { BixoApiClient } from 'src/app/infra/clients/BixoApiClient';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
 
-  constructor(private axios:ApiClient,private cookieService:CookieService) { }
+  constructor(private axios:BixoApiClient,private cookieService:CookieService) { }
 
   public async getAnimals(page:number,size:number){
     let header = "Bearer "+JSON.parse(this.cookieService.get("USER")).token;

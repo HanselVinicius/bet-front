@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApiClient } from '../../infra/ApiClient';
+import { BixoApiClient } from '../../infra/clients/BixoApiClient';
 import LoginDto from '../../model/user/login/LoginDto';
 import User from 'src/app/model/user/User';
 import { CookieService } from 'ngx-cookie-service';
@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginServiceService {
 
   private readonly route = '/v1/auth/login';
-  constructor(private axios:ApiClient,private cookieService:CookieService) {
+  constructor(private axios:BixoApiClient,private cookieService:CookieService) {
   }
 
   public async login(user: string, password: string):Promise<User> {
