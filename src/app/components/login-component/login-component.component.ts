@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import User from 'src/app/model/user/User';
+import { ExceptionService } from 'src/app/services/exceptions/exception.service';
 import { LoginServiceService } from 'src/app/services/login/login-service.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponentComponent {
   public email:string = '';
   public password:string = '';
 
-  constructor(private loginService:LoginServiceService,private toast:NgToastService,private router:Router){
+  constructor(private loginService:LoginServiceService,private toast:NgToastService,private router:Router,private exceptionService:ExceptionService){
 
   }
 
@@ -28,6 +29,7 @@ export class LoginComponentComponent {
     })
     .catch((error) => {
       this.toast.error({detail:"ERRO",summary:'Falha ao executar login',sticky:false, position:'topRight'});
+      this.exceptionService.postException(error.stack,"LoginComponentComponent","login");
     });
    }
 }

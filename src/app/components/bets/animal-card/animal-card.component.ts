@@ -4,6 +4,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BetDialogComponent } from '../../utils/bet-dialog/bet-dialog.component';
 import { BetService } from 'src/app/services/bet/bet.service';
 import { NgToastService } from 'ng-angular-popup';
+import { ExceptionService } from 'src/app/services/exceptions/exception.service';
 @Component({
   selector: 'app-animal-card',
   templateUrl: './animal-card.component.html',
@@ -11,7 +12,7 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class AnimalCardComponent {
   
-    constructor(public dialog:MatDialog,private betService:BetService,private toast:NgToastService){}
+    constructor(public dialog:MatDialog,private betService:BetService,private toast:NgToastService,private exceptionService:ExceptionService){}
 
     @Input() animal:Animal = {
       id:0,
@@ -27,6 +28,7 @@ export class AnimalCardComponent {
           this.toast.success({detail:"SUCESS",summary:'JOGADO NO ' +this.animal.nome +' COM SUCESSO ' ,sticky:false, position:'topRight'});
         }).catch((error)=>{
           this.toast.error({detail:"ERRO",summary:'Falha ao executar Aposta',sticky:false, position:'topRight'});
+          this.exceptionService.postException(error.stack,"AnimalCardComponent","openBetDialog");
         });
       }
      });

@@ -5,7 +5,7 @@ import axios, { AxiosInstance } from "axios";
 @Injectable({
 	providedIn: "root"
 })
-export class BixoApiClient{
+export class ExceptionApiClient{
     private readonly API = '';
     private axiosClient:AxiosInstance
 
