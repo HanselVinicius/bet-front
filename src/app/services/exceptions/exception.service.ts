@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ExceptionApiClient } from 'src/app/infra/clients/ExceptionsApiClient';
+import { Exception } from 'src/app/model/exception/Exception';
 
 @Injectable({
   providedIn: 'root'

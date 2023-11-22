@@ -1,4 +1,4 @@
-interface Exception{
+export interface Exception{
     signature:string,
     application:string,
     project_class:string,
