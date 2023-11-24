@@ -4,6 +4,8 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { BetsComponent } from './components/bets/bets.component';
 import { authenticationGuard } from './guards/AuthGuard';
 import { ForbiddenComponent } from './components/error/forbidden/forbidden.component';
+import { RegisterFormComponent } from './components/formularios/register/register-form/register-form.component';
+import { NotFoundComponent } from './components/error/not_found/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,13 @@ const routes: Routes = [
   {
     path:"forbidden",
     component:ForbiddenComponent
+  },
+  {
+    path:"register",
+    component:RegisterFormComponent
+  },{
+    path:"**",
+    component:NotFoundComponent
   }
 ];
 

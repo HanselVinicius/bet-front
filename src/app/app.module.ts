@@ -17,6 +17,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { AnimalCardComponent } from './components/bets/animal-card/animal-card.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BetDialogComponent } from './components/utils/bet-dialog/bet-dialog.component';
+import { RegisterFormComponent } from './components/formularios/register/register-form/register-form.component';
+import { NotFoundComponent } from './components/error/not_found/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BetDialogComponent } from './components/utils/bet-dialog/bet-dialog.com
     BetsComponent,
     ForbiddenComponent,
     AnimalCardComponent,
+    RegisterFormComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
