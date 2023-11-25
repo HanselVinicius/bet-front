@@ -6,7 +6,6 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
-//aqui esta nomeado errado o nome correto seria um authService devido a aqui ser o service de login e registro
 export class LoginServiceService {
 
   private readonly route = '/v1/auth/login';
@@ -28,7 +27,6 @@ export class LoginServiceService {
 
   public setLogged(user:User){
     this.cookieService.set("USER",JSON.stringify(user),{expires:new Date(new Date().getTime() + 2 * 60 * 60 * 1000)});
-
   }
 
 }
