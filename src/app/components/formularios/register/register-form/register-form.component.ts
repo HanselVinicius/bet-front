@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl,FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { ExceptionService } from 'src/app/services/exceptions/exception.service';
+import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
   selector: 'app-register-form',
@@ -9,13 +13,22 @@ import { FormControl,FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class RegisterFormComponent {
   public applyForm = new FormGroup({
-    email: new FormControl(''),
+    login: new FormControl(''),
     password: new FormControl(''),
     cpf: new FormControl(''),
   });
 
+  constructor(private registerService:RegisterService,private toast:NgToastService,private router:Router,private exceptionService:ExceptionService){}
+
   public onSubmit() {
     console.log(this.applyForm.value);
+    this.registerService.register(this.applyForm.value.login!!,this.applyForm.value.password!!,this.applyForm.value.cpf!!).then((response)=>{
+      this.toast.success({detail:"OK",summary:'Registro efetuado com sucesso',sticky:false, position:'topRight'});
+      this.router.navigate(['/login']);
+    }).catch((error)=>{
+      this.toast.error({detail:"ERRO",summary:'Falha ao executar registro',sticky:false, position:'topRight'});
+      this.exceptionService.postException(error.stack,"RegisterFormComponent","register");
+    });
   }
 
 

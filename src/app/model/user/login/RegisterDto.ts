@@ -1,10 +1,10 @@
 export default class RegisterDto{
-    private user:string;
+    private login:string;
     private password:string;
     private cpf:string;
 
-    constructor(user:string,password:string,cpf:string){
-        this.user = user;
+    constructor(login:string,password:string,cpf:string){
+        this.login = login;
         this.password = password;
         this.cpf = cpf;
     }
