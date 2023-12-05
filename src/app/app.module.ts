@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatIconModule} from '@angular/material/icon'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +45,7 @@ import { NotFoundComponent } from './components/error/not_found/not-found/not-fo
     NgToastModule,
     MatDialogModule,
     BetDialogComponent,
+    MatIconModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

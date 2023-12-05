@@ -1,3 +1,6 @@
 <mat-toolbar class="bg-blue-500 text-white">
     <span>Jogo Do Bixo</span>
+    <ng-container *ngIf="isLogged">
+        <mat-icon class="ml-auto pr-4">border_color</mat-icon>
+    </ng-container>
 </mat-toolbar>
