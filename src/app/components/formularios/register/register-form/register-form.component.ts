@@ -21,7 +21,6 @@ export class RegisterFormComponent {
   constructor(private registerService:RegisterService,private toast:NgToastService,private router:Router,private exceptionService:ExceptionService){}
 
   public onSubmit() {
-    console.log(this.applyForm.value);
     this.registerService.register(this.applyForm.value.login!!,this.applyForm.value.password!!,this.applyForm.value.cpf!!).then((response)=>{
       this.toast.success({detail:"OK",summary:'Registro efetuado com sucesso',sticky:false, position:'topRight'});
       this.router.navigate(['/login']);

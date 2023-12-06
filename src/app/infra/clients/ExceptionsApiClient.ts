@@ -10,7 +10,6 @@ export class ExceptionApiClient{
     private axiosClient:AxiosInstance
 
     constructor(){
-        console.log(this.API);
         this.axiosClient = axios.create({
             baseURL: this.API,
             timeout: 5000,
