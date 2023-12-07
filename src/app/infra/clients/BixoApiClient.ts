@@ -3,12 +3,12 @@ import { ErrorHandler } from "@angular/core";
 import { Injectable } from "@angular/core";
 import { AxiosInstance } from "axios";
 
-
 @Injectable({
 	providedIn: "root"
 })
 export class BixoApiClient{
-    private readonly API = 'http://localhost:8080/';
+
+    private readonly API = '';
     private axiosClient:AxiosInstance
     private errorHandler:ErrorHandler
 
