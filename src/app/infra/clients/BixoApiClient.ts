@@ -8,7 +8,7 @@ import { AxiosInstance } from "axios";
 	providedIn: "root"
 })
 export class BixoApiClient{
-    private readonly API = 'http://localhos:8080/';
+    private readonly API = 'http://localhost:8080/';
     private axiosClient:AxiosInstance
     private errorHandler:ErrorHandler
 

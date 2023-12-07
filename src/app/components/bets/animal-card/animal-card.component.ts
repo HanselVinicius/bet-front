@@ -22,7 +22,7 @@ export class AnimalCardComponent {
 
 
     public openBetDialog(){
-     let dialogRef = this.dialog.open(BetDialogComponent,{}).afterClosed().subscribe(result => {
+    this.dialog.open(BetDialogComponent,{}).afterClosed().subscribe(result => {
         if(result){
         this.betService.betInAnimal(this.animal.nome).then((response)=>{
           this.toast.success({detail:"SUCESS",summary:'JOGADO NO ' +this.animal.nome +' COM SUCESSO ' ,sticky:false, position:'topRight'});

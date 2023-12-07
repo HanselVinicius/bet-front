@@ -21,7 +21,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BetDialogComponent } from './components/utils/bet-dialog/bet-dialog.component';
 import { RegisterFormComponent } from './components/formularios/register/register-form/register-form.component';
 import { NotFoundComponent } from './components/error/not_found/not-found/not-found.component';
-
+import { DialogRegisterAnimalComponent } from './components/utils/dialog-register-animal/dialog-register-animal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,7 @@ import { NotFoundComponent } from './components/error/not_found/not-found/not-fo
     AnimalCardComponent,
     RegisterFormComponent,
     NotFoundComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,6 +45,7 @@ import { NotFoundComponent } from './components/error/not_found/not-found/not-fo
     NgToastModule,
     MatDialogModule,
     BetDialogComponent,
+    DialogRegisterAnimalComponent,
     MatIconModule
   ],
   providers: [CookieService],

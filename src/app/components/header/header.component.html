@@ -1,6 +1,8 @@
 <mat-toolbar class="bg-blue-500 text-white">
     <span>Jogo Do Bixo</span>
-    <ng-container *ngIf="isLoggedAdmin()">
-        <mat-icon class="ml-auto pr-4">border_color</mat-icon>
-    </ng-container>
+    <mat-dialog-actions class="ml-auto pr-4">
+        <ng-container *ngIf="isLoggedAdmin()">
+            <mat-icon (click)="openDialog()" >border_color</mat-icon>
+         </ng-container>
+</mat-dialog-actions>
 </mat-toolbar>

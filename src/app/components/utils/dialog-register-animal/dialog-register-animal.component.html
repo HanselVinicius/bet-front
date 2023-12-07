@@ -1,0 +1,12 @@
+<div class="bg-white text-black">
+    <h1 mat-dialog-title class="text-black">Apostar</h1>
+    
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome do Animal" [(ngModel)]="animalName" class="text-black">
+     </mat-form-field>
+
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close class="text-black" (click)="onConfirm()">cancelar</button>
+        <button mat-button mat-dialog-close cdkFocusInitial class="text-black" (click)="onConfirm()">Criar</button>
+    </div>
+</div>
