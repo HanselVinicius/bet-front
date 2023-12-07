@@ -2,13 +2,14 @@ import axios from "axios";
 import { ErrorHandler } from "@angular/core";
 import { Injectable } from "@angular/core";
 import { AxiosInstance } from "axios";
+import { environment } from '../../../environments/environment';
 
 @Injectable({
 	providedIn: "root"
 })
 export class BixoApiClient{
 
-    private readonly API = '';
+    private readonly API = environment.API_URL;
     private axiosClient:AxiosInstance
     private errorHandler:ErrorHandler
 

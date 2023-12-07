@@ -1,9 +1,10 @@
 <div class="bg-white text-black">
     <h1 mat-dialog-title class="text-black">Apostar</h1>
     
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nome do Animal" [(ngModel)]="animalName" class="text-black">
-     </mat-form-field>
+    <div class="mb-4 px-4">
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nome</label>
+        <input [(ngModel)]="animalName" class="w-full px-3 py-2 border rounded-lg" placeholder="Macaco">
+    </div>
 
     <div mat-dialog-actions>
         <button mat-button mat-dialog-close class="text-black" (click)="onConfirm()">cancelar</button>
