@@ -1,13 +1,9 @@
-FROM node:20 AS build
-WORKDIR /usr
-COPY package.json package-lock.json ./
-RUN npm install
+FROM node:18 as build
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm ci
+RUN npm install -g @angular/cli
 COPY . .
-RUN npm install -g @angular/cli@13
-
-RUN npm run build
-
-FROM node:20
-COPY --from=build /usr/src/app/dist/jogo_do_bixo /usr/src/app/jogo_do_bixo
-WORKDIR /usr/src/app/jogo_do_bixo
-CMD [ "npm", "run", "start" ]
+RUN npm run build --prod
+FROM nginx:1.15.8-alpine
+COPY --from=build /usr/src/app/dist/jogo_do_bixo /usr/share/nginx/html
