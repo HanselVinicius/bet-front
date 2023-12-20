@@ -29,7 +29,6 @@ export class LoginComponentComponent {
     })
     .catch((error) => {
       this.toast.error({detail:"ERRO",summary:'Falha ao executar login',sticky:false, position:'topRight'});
-      this.exceptionService.postException(error.stack,"LoginComponentComponent","login");
     });
    }
 }

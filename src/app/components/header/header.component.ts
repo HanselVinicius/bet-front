@@ -26,7 +26,6 @@ export class HeaderComponent{
           this.toast.success({detail:"SUCESSO",summary:'Registro do animal efetuado com sucesso',sticky:false, position:'topRight'});
           this.sharedRegistration.emitAnimalRegistered();
         }).catch((error)=>{
-          this.exceptionService.postException(error.stack,"HeaderComponent","openDialog");
           this.toast.error({detail:"ERRO",summary:'Falha ao executar registro do animal',sticky:false, position:'topRight'});
         });
       });

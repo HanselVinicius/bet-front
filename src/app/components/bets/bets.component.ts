@@ -30,7 +30,6 @@ export class BetsComponent implements OnInit {
       this.totalPages = Array(response.data.totalPages).fill(0).map((x,i)=>i);
     }).catch((error)=>{
       this.toast.error({detail:"ERRO",summary:'Falha ao exibir dados',sticky:false, position:'topRight'});
-      this.exceptionService.postException(error.stack,"BetsComponent","populeList");
     });
   }
 }

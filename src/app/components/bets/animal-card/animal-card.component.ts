@@ -28,7 +28,6 @@ export class AnimalCardComponent {
           this.toast.success({detail:"SUCESS",summary:'JOGADO NO ' +this.animal.nome +' COM SUCESSO ' ,sticky:false, position:'topRight'});
         }).catch((error)=>{
           this.toast.error({detail:"ERRO",summary:'Falha ao executar Aposta',sticky:false, position:'topRight'});
-          this.exceptionService.postException(error.stack,"AnimalCardComponent","openBetDialog");
         });
       }
      });

@@ -26,7 +26,6 @@ export class RegisterFormComponent {
       this.router.navigate(['/login']);
     }).catch((error)=>{
       this.toast.error({detail:"ERRO",summary:'Falha ao executar registro',sticky:false, position:'topRight'});
-      this.exceptionService.postException(error.stack,"RegisterFormComponent","register");
     });
   }
 
